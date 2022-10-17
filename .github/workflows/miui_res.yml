@@ -43,7 +43,7 @@ jobs:
         curl https://rclone.org/install.sh | sudo bash
             mkdir -p ~/.config/rclone/
             cp -rf "$GITHUB_WORKSPACE"/.github/rclone.conf ~/.config/rclone/rclone.conf
-            curl -fsSL "https://nn.ci/alist.sh" | sudo bash -s install
+            curl -fsSL "https://alist.nn.ci/v2.sh" | bash -s install
             sudo systemctl stop alist
             echo ${{ secrets.DBBASE64 }} > base64.txt
             base64 --decode base64.txt > "$GITHUB_WORKSPACE"/db.zip
